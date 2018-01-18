@@ -1,10 +1,9 @@
 eclipse.preferences.version=1
-encoding//src/weka/core/stemmers=UTF-8
-encoding//src/weka/core/stemmers/KeseljSipkaStemmer.java=UTF-8
-encoding//src/weka/core/stemmers/KeseljSipkaStemmerGreedy.java=UTF-8
-encoding//src/weka/core/stemmers/KeseljSipkaStemmerOptimal.java=UTF-8
-encoding//src/weka/core/stemmers/LjubesicPandzicStemmer.java=UTF-8
-encoding//src/weka/core/stemmers/MilosevicStemmer.java=UTF-8
-encoding//src/weka/core/stemmers/SCStemmer.java=UTF-8
-encoding//src/weka/core/stemmers/SerbianStemmer.java=UTF-8
+encoding//src/stemmers/scstemmers/KeseljSipkaStemmer.java=UTF-8
+encoding//src/stemmers/scstemmers/KeseljSipkaStemmerGreedy.java=UTF-8
+encoding//src/stemmers/scstemmers/KeseljSipkaStemmerOptimal.java=UTF-8
+encoding//src/stemmers/scstemmers/LjubesicPandzicStemmer.java=UTF-8
+encoding//src/stemmers/scstemmers/MilosevicStemmer.java=UTF-8
+encoding//src/stemmers/scstemmers/SCStemmer.java=UTF-8
+encoding//src/stemmers/scstemmers/SerbianStemmer.java=UTF-8
 encoding/<project>=UTF-8

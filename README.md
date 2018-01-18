@@ -4,10 +4,13 @@ This package is a Java reimplementation of four previously published stemming al
 * A refinement of the greedy subsumption-based stemmer, by Nikola Milošević ([originally written in PHP](http://arxiv.org/abs/1209.4471), [later also made available in Python](https://nikolamilosevic86.github.io/SerbianStemmer/))
 * A "Simple stemmer for Croatian v0.1", by Nikola Ljubešić and Ivan Pandžić ([originally written in Python](http://nlp.ffzg.hr/resources/tools/stemmer-for-croatian/))
 
+# No WEKA Fork
+This fork of the project removes the integration with and dependency on the WEKA libraries, to create a significantly smaller jar file.
+
 ## Text Encoding
 All stemmers expect the input text to be formatted in UTF-8. Their outputs are also UTF-8 encoded.
 
-Since Serbian is a digraphic language the input texts can be in either the Cyrillic or the Latin script. The stemmer for Croatian works only with texts in the Latin script.
+Since Serbian is a digraphic language the input texts can be in either the Cyrillic or the Latin script. The stemmer for Croatian includes a Cyrillic-to-Latin conversion and so can handle texts in either the Cyrillic or the Latin script.
 
 For the sake of consistency all stemmers produce output in the Latin script.
 
@@ -49,12 +52,6 @@ where *StemmerID* is a number identifying the stemming algorithm:
 * 4 - Ljubešić & Pandžić
 
 *InputFile* is the path of the TXT file encoded in UTF-8 that is to be stemmed. The stemmed text will be placed in the file determined by the *OutputFile* argument.
-
-### Weka
-Alternatively, the stemmers can be utilized as an unofficial plug-in module within Weka (Waikato Environment for Knowledge Analysis).
-To do so, download the [SCStemmers Weka package](https://github.com/vukbatanovic/SCStemmers/releases/download/v1.0.0/SCStemmers_1.0.0.zip).
-Open the Weka package manager (available in Weka >= 3.7) and use the "Unofficial - File/URL" option to select and install SCStemmers.
-After restarting Weka, the list of available stemmers (within the StringToWordVector filter) will also contain the four stemmers from this package.
 
 ## References
 If you wish to use this package in your paper or project, please include a reference to the following paper in which it was presented:
