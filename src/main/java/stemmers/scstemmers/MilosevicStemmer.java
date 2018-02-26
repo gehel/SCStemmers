@@ -1,6 +1,7 @@
 package stemmers.scstemmers;
 
 import java.util.HashMap;
+import java.util.Locale;
 
 /**
  * <p>
@@ -75,12 +76,12 @@ public class MilosevicStemmer extends SerbianStemmer {
 		/* Proverava da li se reč nalazi u rečniku - ako se nalazi, vraća njen izvorni oblik
 		 * Checks if the word can be found in the dictionary - if so, it returns its original form
 		 */
-		if (dictionary.containsKey(word.toLowerCase()))
+		if (dictionary.containsKey(word.toLowerCase(Locale.ROOT))) // TODO: use the correct locale
 			/* Očuvava kapitalizaciju na početku rečenice
 			 * Preserves the capitalization at the start of a sentence
 			 */
 			if (Character.isUpperCase(word.codePointAt(0))) {
-				String ret = dictionary.get(word.toLowerCase());
+				String ret = dictionary.get(word.toLowerCase(Locale.ROOT)); // TODO: use the correct locale
 				char first = Character.toUpperCase(ret.charAt(0));
 				ret = Character.toString(first) + ret.substring(1);
 				return ret;
@@ -88,7 +89,7 @@ public class MilosevicStemmer extends SerbianStemmer {
 			else
 				return dictionary.get(word);
 
-		String s = word.toLowerCase();
+		String s = word.toLowerCase(Locale.ROOT); // TODO: use the correct locale
 		int minWordLength;
 		if (word.matches("\\b(cx|cy|zx|dx|dy|sx|Cx|Cy|Zx|Dx|Dy|Sx)\\w*"))
 			minWordLength = 3;

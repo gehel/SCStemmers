@@ -3,6 +3,7 @@ package stemmers.scstemmers;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -86,7 +87,7 @@ public class LjubesicPandzicStemmer extends SCStemmer {
 	@Override
 	public String stemWord(String word) {
 		word = convertCyrrilicToLatinString(word);
-		if (stopset.contains(word.toLowerCase()))
+		if (stopset.contains(word.toLowerCase(Locale.ROOT))) // TODO: use the correct locale
 			return word;
 		String stemmed = transform(word);
 		for (int i=0; i<wordPatterns.size(); i++) {

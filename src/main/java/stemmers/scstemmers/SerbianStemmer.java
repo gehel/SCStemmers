@@ -7,6 +7,8 @@ import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 
+import de.thetaphi.forbiddenapis.SuppressForbidden;
+
 /**
  * <p>
  * Ova apstraktna klasa implementira zajedničke funkcije za stemere za srpski opisane u radu:
@@ -163,6 +165,7 @@ public abstract class SerbianStemmer extends SCStemmer {
 	 * @param fileOutput Ime izlaznog fajla
 	 * <br><i>The name of the output file</i>
 	 */
+	@SuppressForbidden // TODO: replace System.out with logger
 	public void stemDual1File (String fileInput, String fileOutput) {
 		try {
 			BufferedReader br = new BufferedReader (new FileReader(fileInput));
@@ -245,6 +248,7 @@ public abstract class SerbianStemmer extends SCStemmer {
 	 * @param fileOutput Izlazni fajl čiji sadržaj treba da bude zapisan u standardnom obliku
 	 * <br> <i>The output file whose contents should be written in the standard form</i>
 	 */
+	@SuppressForbidden // TODO: replace System.out with logger
 	public void convertToNormalFile (String fileInput, String fileOutput) {
 		try {
 			BufferedReader br = new BufferedReader (new FileReader(fileInput));
@@ -272,6 +276,7 @@ public abstract class SerbianStemmer extends SCStemmer {
 	 * @param fileOutput Izlazni fajl čiji sadržaj treba da bude zapisan u dual1 kodiranju
 	 * <br> <i>The output file whose contents should be written in the dual1 coding system</i>
 	 */
+	@SuppressForbidden // TODO: replace System.out with logger
 	public void convertToDual1File (String fileInput, String fileOutput) {
 		try {
 			BufferedReader br = new BufferedReader (new FileReader(fileInput));

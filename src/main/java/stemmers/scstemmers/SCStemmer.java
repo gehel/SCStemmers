@@ -8,6 +8,8 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.regex.Pattern;
 
+import de.thetaphi.forbiddenapis.SuppressForbidden;
+
 /**
  * Osnovna apstraktna klasa za funkcije zajedničke za sve stemere za srpski i hrvatski
  * <p>
@@ -44,6 +46,7 @@ public abstract class SCStemmer {
 	 * @param fileOutput Ime izlaznog fajla u kome tekst treba da bude napisan tako da svaka reč bude u posebnom redu.
 	 * <br><i>The name of the output file in which text should be written one word per line.</i>
 	 */
+	@SuppressForbidden // TODO: replace System.out with logger
 	public void replaceSpaceWithNewLine (String fileInput, String fileOutput) {
 		try {
 			BufferedReader br = new BufferedReader (new FileReader(fileInput));
@@ -122,6 +125,7 @@ public abstract class SCStemmer {
 	 * <p>
 	 * <i>Prints the instructions for using the SCStemmers package from the command line</i>
 	 */
+	@SuppressForbidden // TODO: replace System.out with logger
 	private static void printCorrectUsage () {
 		System.out.println("Stemmers from this library can be properly invoked by:");
 		System.out.println("java -jar SCStemmers.jar StemmerID InputFile OutputFile\n");
@@ -134,7 +138,8 @@ public abstract class SCStemmer {
 		System.out.println("The stemmed text will be placed in the file determined by the OutputFile argument.");
 		System.exit(0);
 	}
-	
+
+	@SuppressForbidden // TODO: replace System.out with logger
 	public static void main (String [] args) {
 		try {
 			if (args.length != 3)

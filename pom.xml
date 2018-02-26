@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.wikimedia.discovery</groupId>
+        <artifactId>discovery-parent-pom</artifactId>
+        <version>1.12</version>
+    </parent>
+
+    <groupId>org.wikimedia.search</groupId>
+    <artifactId>scstemmers</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <description>Serbian analyzer.</description>
+
+    <url>TBD</url>
+
+    <licenses>
+        <license>
+            <name>GNU General Public License v3</name>
+            <url>https://www.gnu.org/licenses/gpl-3.0.en.html</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <!-- TBD -->
+    </developers>
+
+    <scm>
+        <!--<connection>scm:git:https://gerrit.wikimedia.org/r/search/extra</connection>-->
+        <!--<developerConnection>scm:git:ssh://gerrit.wikimedia.org:29418/search/extra</developerConnection>-->
+        <!--<tag>HEAD</tag>-->
+        <!--<url>https://gerrit.wikimedia.org/r/#/admin/projects/search/extra</url>-->
+    </scm>
+
+    <issueManagement>
+        <!--<system>GitHub</system>-->
+        <!--<url>https://github.com/wikimedia/extra/issues</url>-->
+    </issueManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>de.thetaphi</groupId>
+            <artifactId>forbiddenapis</artifactId>
+            <version>${forbiddenapis.version}</version>
+            <scope>provided</scope>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <!-- re-enable once bugs are fixed -->
+                    <groupId>com.github.hazendaz.spotbugs</groupId>
+                    <artifactId>spotbugs-maven-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <id>spotbugs-check</id>
+                            <phase>none</phase>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <!-- re-enable if we want to follow our usual style guidelines -->
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-checkstyle-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <id>validate</id>
+                            <phase>none</phase>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+</project>

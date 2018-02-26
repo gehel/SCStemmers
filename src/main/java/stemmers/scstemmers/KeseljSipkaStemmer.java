@@ -1,5 +1,6 @@
 package stemmers.scstemmers;
 
+import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -43,7 +44,7 @@ public abstract class KeseljSipkaStemmer extends SerbianStemmer  {
 	public String stemDual1Word (String word) {
 		if (word.length() <= 3)
 			return word;
-		String s = word.toLowerCase();
+		String s = word.toLowerCase(Locale.ROOT); // TODO: use the correct locale
 		while (s.length() > maxSuffixLen || (!rules.containsKey(s) && !s.equals("")))
 			s = s.substring(1);
 		if (s.equals(""))
